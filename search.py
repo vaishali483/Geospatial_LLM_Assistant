@@ -1,14 +1,10 @@
-"""Step 3b: hybrid search = geography first, then meaning.
-
-Try:  python search.py "quiet cafe with wifi" "Birmingham New Street" 500
-"""
 import sys
 
 import faiss
 import numpy as np
 
 from geo import PlaceStore, haversine_m, load_places
-from step3_build_index import embed, get_model
+from build_index import embed, get_model
 
 
 class HybridSearcher:
