@@ -1,8 +1,3 @@
-"""Step 3a: turn every place description into an embedding and build FAISS indexes.
-
-Run:  python step3_build_index.py
-Out:  data/embeddings.npy, data/flat.index, data/hnsw.index
-"""
 import time
 
 import faiss

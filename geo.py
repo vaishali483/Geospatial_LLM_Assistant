@@ -1,4 +1,3 @@
-"""Step 2: geography done with plain maths, never by the LLM."""
 import json
 
 import numpy as np

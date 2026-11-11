@@ -1,7 +1,3 @@
-"""Step 4: measure it. Geography and meaning are evaluated SEPARATELY.
-
-Run:  python step4_evaluate.py
-"""
 import json
 import os
 import random

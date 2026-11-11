@@ -1,8 +1,3 @@
-"""Step 1: read the OSM file and turn useful places into clean records.
-
-Run:  python step1_extract.py data/west-midlands-261108.osm.pbf
-Out:  data/places.jsonl  (one JSON record per line)
-"""
 import json
 import sys
 from pathlib import Path
