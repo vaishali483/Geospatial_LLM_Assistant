@@ -1,0 +1,5 @@
+osmium
+numpy
+faiss-cpu
+sentence-transformers
+pydantic
