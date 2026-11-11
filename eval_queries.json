@@ -1,0 +1,85 @@
+[
+  {
+    "query": "quiet cafe with wifi",
+    "near": "Birmingham New Street",
+    "radius_m": 500.0,
+    "relevant_ids": [
+      "osm:node/3208290621",
+      "osm:way/93418834",
+      "osm:way/1561745489",
+      "osm:node/310673285",
+      "osm:node/8332475997",
+      "osm:node/4331986522"
+    ]
+  },
+  {
+    "query": "vegan food",
+    "near": "Birmingham New Street",
+    "radius_m": 800.0,
+    "relevant_ids": [
+      "osm:way/1298530241",
+      "osm:way/238910489",
+      "osm:node/12161719624",
+      "osm:node/4592379289",
+      "osm:node/11008403092",
+      "osm:way/1561745489",
+      "osm:way/1561745492",
+      "osm:node/7142730585",
+      "osm:way/1561473641",
+      "osm:node/11687769870",
+      "osm:way/1561473640",
+      "osm:node/9927270617",
+      "osm:node/11608851309",
+      "osm:node/2535904263",
+      "osm:node/310674204",
+      "osm:node/1981141798",
+      "osm:node/6402227993",
+      "osm:node/319268759",
+      "osm:node/14087812476",
+      "osm:node/7879853757",
+      "osm:node/310673285",
+      "osm:node/13513723001",
+      "osm:node/14160215990",
+      "osm:node/310674197",
+      "osm:node/13092740693",
+      "osm:node/4452100677",
+      "osm:node/6212745643",
+      "osm:node/6212745642",
+      "osm:node/13076623940",
+      "osm:way/1545525185",
+      "osm:node/5620478124",
+      "osm:way/1537148174",
+      "osm:node/7142734486",
+      "osm:node/13667276951",
+      "osm:node/2587329555",
+      "osm:node/7077460487",
+      "osm:way/89816897",
+      "osm:node/81440685",
+      "osm:node/12435645489",
+      "osm:way/1534426467",
+      "osm:node/2605488381"
+    ]
+  },
+  {
+    "query": "somewhere to read books",
+    "near": "Birmingham New Street",
+    "radius_m": 1000.0,
+    "relevant_ids": [
+      "osm:way/1298530229",
+      "osm:way/583279291",
+      "osm:node/2556578508",
+      "osm:way/1217149375",
+      "osm:node/2523807522",
+      "osm:node/14166881074",
+      "osm:node/14166881073",
+      "osm:way/963994040",
+      "osm:way/195934961"
+    ]
+  },
+  {
+    "query": "indian restaurant",
+    "near": "University of Birmingham",
+    "radius_m": 500.0,
+    "relevant_ids": []
+  }
+]

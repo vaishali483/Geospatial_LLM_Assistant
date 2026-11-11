@@ -52,18 +52,28 @@ for _ in range(50):
 print(f"\n3) Hybrid query latency: p50 {np.percentile(times, 50):.1f} ms, "
       f"p95 {np.percentile(times, 95):.1f} ms")
 
-# 4) Semantic relevance on YOUR hand-labelled queries (create eval_queries.json first).
+# 4) Semantic relevance on YOUR hand-labelled queries (make them with label_helper.py).
 path = "eval_queries.json"
-if not os.path.exists(path):
-    print(f"\n4) Skipped: create {path} with hand-labelled queries (see guide)")
+text = open(path, encoding="utf-8").read().strip() if os.path.exists(path) else ""
+if not text:
+    print(f"\n4) Skipped: create {path} with label_helper.py (see guide)")
 else:
-    labelled = json.load(open(path, encoding="utf-8"))
-    recalls = []
+    labelled = json.loads(text)
+    precisions, recalls = [], []
+    print(f"\n4) Relevance on {len(labelled)} labelled queries (top 5 results each):")
     for item in labelled:
         a = store.geocode(item["near"])
         rows = s.filter_then_rank(item["query"], a["lat"], a["lon"], item["radius_m"], k=5)
         got = {r["id"] for r in rows}
         rel = set(item["relevant_ids"])
-        recalls.append(len(got & rel) / len(rel))
-        print(f"   recall@5 {recalls[-1]:.2f}  '{item['query']}'")
-    print(f"\n4) Mean recall@5 over {len(recalls)} labelled queries: {np.mean(recalls):.2f}")
+        if not rel:
+            # The right answer is "nothing here". Any result is a false result.
+            print(f"   no right answer exists, system still returned {len(rows)}  '{item['query']}'")
+            continue
+        hits = len(got & rel)
+        precisions.append(hits / 5)
+        recalls.append(hits / len(rel))
+        print(f"   precision@5 {precisions[-1]:.2f}  recall@5 {recalls[-1]:.2f}  "
+              f"({len(rel)} relevant)  '{item['query']}'")
+    if precisions:
+        print(f"   Mean precision@5 {np.mean(precisions):.2f}, mean recall@5 {np.mean(recalls):.2f}")
