@@ -18,7 +18,7 @@ class HybridSearcher:
         return embed(self.model, [text])  # shape (1, dim)
 
     def filter_then_rank(self, query, lat, lon, radius_m, category=None,
-                         step_free_only=False, k=5):
+                         step_free_only=False, k=5, cuisine=None):
         """Strategy A (our main one): exact radius filter, then rank survivors by meaning."""
         hits = self.store.within_radius(lat, lon, radius_m)
         results = []
@@ -27,6 +27,8 @@ class HybridSearcher:
             if category and p["category"] != category:
                 continue
             if step_free_only and p["step_free"] != "yes":
+                continue
+            if cuisine and cuisine.lower() not in p["tags"].get("cuisine", "").lower():
                 continue
             results.append((i, dist))
         if not results:
