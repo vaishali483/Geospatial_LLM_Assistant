@@ -3,3 +3,7 @@ numpy
 faiss-cpu
 sentence-transformers
 pydantic
+pydantic-ai-slim[google]
+python-dotenv
+streamlit
+pandas
